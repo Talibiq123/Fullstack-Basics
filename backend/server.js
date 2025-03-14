@@ -1,12 +1,13 @@
 import express from 'express';
 
 const app = express();
+app.use(express.static('dist'));
 
 const port = process.env.PORT || 5000;
 
-app.get('/', (req, res) => {
-    res.send('server is ready.');
-})
+// app.get('/', (req, res) => {
+//     res.send('server is ready.');
+// })
 
 // get a list of five jokes
 app.get('/api/jokes', (req, res) => {
